@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EK65KNDVK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-0EK65KNDVK');
@@ -26,7 +26,7 @@
   <!-- TODO: remove this when it goes live -->
   <meta name="robots" content="noindex, nofollow">
 
-  <title>Toon3D: Seeing Cartoons from a New Perspectiv</title>
+  <title>Toon3D</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✏️</text></svg>">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -63,7 +63,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title" style="font-family: Noteworthy; font-weight: bold">Toon3D: Seeing
+            <h1 class="title is-1 publication-title" style="font-family: Marker Felt; font-weight: bold">Toon3D: Seeing
               Cartoons from a New Perspective</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -94,7 +94,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="http://arxiv.org/abs/2312.04560" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#TODO" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -113,12 +113,20 @@
                 </span>
                 <!-- Toon3D Labeler Link. -->
                 <span class="link-block">
-                  <a href="https://labeler.toon3d.studio"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://labeler.toon3d.studio" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="fas fa-pencil-alt"></i>
                     </span>
                     <span>Toon3D Labeler</span>
+                  </a>
+                </span>
+                <!-- Toon3D Overview Video. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/tJ7UKALsF-0" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Overview Video</span>
                   </a>
                 </span>
               </div>
@@ -134,7 +142,8 @@
     <div class="container is-max-widescreen">
       <div class="hero-body">
         <h2 class="subtitle has-text-centered">
-          TLDR: <span class="dnerf">Toon3D</span> ... TODO
+          TLDR: <span class="my-method-name">Toon3D</span> lifts cartoons into 3D via aligning and warping backprojected
+          monocular depth predictions.
         </h2>
         <img src="static/images/teaser.png" style="height: auto;">
       </div>
@@ -145,56 +154,64 @@
   <section class="hero is-light">
     <div class="hero-body">
       <div class="content has-text-centered">
-        <p style="text-align: center">We mark missing regions in pink and use <span class="dnerf">NeRFiller</span> to
-          complete these areas, shown
-          on the right.
-        </p>
+        <p style="text-align: center">We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes. We
+          refine the aligned point clouds with Gaussian optimization.<br>These scenes have sparse viewpoints as input,
+          ranging from only 4 to as many as 12 hand-drawn images.</p>
       </div>
       <div class="container">
-        <div id="results-carousel" class="carousel2 results-carousel">
+        <div id="results-carousel" class="carousel_splats results-carousel">
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/bear.mp4" type="video/mp4">
+              <source src="./static/splats/bobs-burgers.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/norway.mp4" type="video/mp4">
+              <source src="./static/splats/family-guy-house.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/billiards.mp4" type="video/mp4">
+              <source src="./static/splats/krusty-krab.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/dumptruck.mp4" type="video/mp4">
+              <source src="./static/splats/rick-and-morty.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/boot.mp4" type="video/mp4">
+              <source src="./static/splats/simpsons-house.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/drawing.mp4" type="video/mp4">
+              <source src="./static/splats/spirited-away.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/office.mp4" type="video/mp4">
+              <source src="./static/splats/planet-express.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/cat.mp4" type="video/mp4">
+              <source src="./static/splats/family-guy-dining.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/backpack.mp4" type="video/mp4">
+              <source src="./static/splats/avatar-house.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/turtle.mp4" type="video/mp4">
+              <source src="./static/splats/bojack-room.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/splats/magic-school-bus.mp4" type="video/mp4">
+            </video>
+            <br>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/splats/mystery-machine.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -211,19 +228,17 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose <span class="dnerf">NeRFiller</span>, an approach that completes missing portions of a 3D
-              capture via generative 3D inpainting using off-the-shelf 2D visual generative models. Often parts of a
-              captured 3D scene or object are missing due to mesh reconstruction failures or a lack of observations
-              (e.g., contact regions, such as the bottom of objects, or hard-to-reach areas). We approach this
-              challenging 3D inpainting problem by leveraging a 2D inpainting diffusion model. We identify a surprising
-              behavior of these models, where they generate more 3D consistent inpaints when images form a 2x2
-              grid, and show how to generalize this behavior to more than four images. We then present an iterative
-              framework to distill these inpainted regions into a single consistent 3D scene. In contrast to related
-              works, we focus on completing scenes rather than deleting foreground objects, and our approach does not
-              require tight 2D object masks or text. We compare our approach to relevant baselines adapted to our
-              setting on a variety of scenes, where <span class="dnerf">NeRFiller</span> creates the most 3D consistent
-              and plausible scene
-              completions.
+              We propose <span class="my-method-name">Toon3D</span>. In this work, we recover the underlying 3D
+              structure of non-geometrically consistent scenes. In
+              particular, we focus on cartoons. Many cartoons are created by artists without a 3D rendering engine,
+              which means that any new image of a scene is hand-drawn. The hand-drawn images are usually faithful
+              representations of the world, but only in a qualitative sense, since it is difficult for humans to draw
+              multiple perspectives of an object or scene 3D consistently. In this work, we correct for 2D drawing
+              inconsistencies to recover a plausible 3D structure such that the newly warped drawings are consistent
+              with each other. Our pipeline consists of a user-friendly annotation tool, camera pose estimation, and
+              image deformation to recover a dense structure. Our warped images use a perspective camera model, enabling
+              our aligned results to be plugged into novel-view synthesis reconstruction methods to experience cartoons
+              from viewpoints never drawn before.
             </p>
           </div>
         </div>
@@ -240,7 +255,8 @@
           <h2 class="title is-3">Completing Large Unknown Regions</h2>
           <div class="content has-text-justified">
             <p>
-              Using <span class="dnerf">NeRFiller</span>, we can iteratively update a dataset to inpaint a scene. Our
+              Using <span class="my-method-name">NeRFiller</span>, we can iteratively update a dataset to inpaint a
+              scene. Our
               methods are shown on the bottom right against various baselines. Click <a
                 href="./static/videos/3D_consistent_image_inpainting.mp4">here</a> to see all results of the
               baselines on 10 datasets. "LaMask" and "SD Image Cond" are our adaptations of SPIn-NeRF to our problem
@@ -375,7 +391,8 @@
           <h2 class="title is-3">Reference-Based Inpainting</h2>
           <div class="content has-text-centered">
             <p>
-              Using <span class="dnerf">NeRFiller</span>, you can inpaint one image and use it as a reference to guide
+              Using <span class="my-method-name">NeRFiller</span>, you can inpaint one image and use it as a reference
+              to guide
               the 3D infilling.
             </p>
           </div>
@@ -440,7 +457,8 @@
           <h2 class="title is-3">Multi-View Consistent Inpainting</h2>
           <div class="content has-text-justified">
             <p>
-              With <span class="dnerf">NeRFiller</span>, we can inpaint many images jointly. We accomplish this by using
+              With <span class="my-method-name">NeRFiller</span>, we can inpaint many images jointly. We accomplish this
+              by using
               the our "Grid Prior" and "Joint Multi-View Inpainting" strategies. We compare various inpainting
               strategies, where we inpaint once and then NeRF the scene to check for 3D consistency. Click <a
                 href="./static/videos/multi-view_consistent_inpainting_eval_split.mp4">here</a> to see all
