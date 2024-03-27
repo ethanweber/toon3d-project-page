@@ -293,92 +293,82 @@
 
   <section class="section">
     <div class="container is-max-widescreen">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Interactive Comparisons</h2>
+          <h2 class="title is-3">Explore Inside Rick and Morty's House</h2>
           <div class="content has-text-centered" style="margin-bottom: 10px;">
-            <p>
-              Select a method and dataset to see the results. Ours is on the right.
-            </p>
+            <p>We reconstruct inside the Rick and Morty house by labeling between walls and ceilings to connect the
+              rooms. In the first video, we show the point cloud & cameras and our custom labeling interface. In the second video, you can scrub the slider to
+              see a walkthrough inside the house! The closest camera's image is shown in the bottom right corner.</p>
+          </div>
+          <!-- Columns container -->
+          <div class="columns">
+            <div class="column is-half">
+              <video id="labeling-rick-and-morty-video" controls autoplay muted loop playsinline width="100%">
+                <source src="./static/rick-and-morty/labeling-rick-and-morty.mov" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-half">
+              <input type="range" id="video-scrubber" min="0" value="0" step="1" style="width: 100%;">
+              <video id="rick-and-morty-video" autoplay muted loop playsinline width="100%">
+                <source src="./static/rick-and-morty/rick-and-morty.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- buttons to toggle videos with method. The buttons should be NeRFiller, Masked NeRF -->
-    <!-- buttons to toggle videos with dataset. The buttons should be bear, cat, etc. -->
     <script>
-      // set method
-      // set dataset
+      document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('rick-and-morty-video');
+        var scrubber = document.getElementById('video-scrubber');
+        var wasPlaying = false; // Track whether the video was playing before scrubbing started
+
+        video.addEventListener('loadedmetadata', function () {
+          scrubber.max = video.duration;
+        });
+
+        scrubber.addEventListener('input', function () {
+          video.currentTime = this.value;
+        });
+
+        video.addEventListener('timeupdate', function () {
+          scrubber.value = video.currentTime;
+        });
+
+        // When user starts scrubbing, pause the video if it was playing
+        scrubber.addEventListener('mousedown', function () {
+          if (!video.paused) {
+            video.pause();
+            wasPlaying = true;
+          }
+        });
+
+        // When user stops scrubbing, resume playing the video if it was playing before
+        scrubber.addEventListener('mouseup', function () {
+          if (wasPlaying) {
+            video.play();
+            wasPlaying = false; // Reset the flag
+          }
+        });
+
+        // Optionally, for touch screens, you may want to handle touchstart and touchend
+        scrubber.addEventListener('touchstart', function () {
+          if (!video.paused) {
+            video.pause();
+            wasPlaying = true;
+          }
+        });
+
+        scrubber.addEventListener('touchend', function () {
+          if (wasPlaying) {
+            video.play();
+            wasPlaying = false; // Reset the flag
+          }
+        });
+      });
     </script>
-    <div class="container">
-      <div class="columns is-centered" style="margin-bottom: 0px;">
-        <div class="column is-full-width" style="padding: 0px">
-          <div class="content has-text-centered">
-            <button class="button is-rounded is-dark is-small" id="masked-nerf"
-              onclick="setMethod('masked-nerf')">Masked
-              NeRF</button>
-            <button class="button is-rounded is-dark is-small" id="lamask" onclick="setMethod('lamask')">LaMask</button>
-            <button class="button is-rounded is-dark is-small" id="sd-image-cond"
-              onclick="setMethod('sd-image-cond')">SD Image
-              Cond</button>
-            <button class="button is-rounded is-dark is-small" id="inpaint+du" onclick="setMethod('inpaint+du')">Inpaint
-              + DU</button>
-          </div>
-        </div>
-      </div>
-      <div class="column is-full-width" style="padding: 0px;">
-        <div class="column is-full-width">
-          <div class="content has-text-centered">
-            <button class="button is-rounded is-dark is-small" id="dumptruck" onclick="setDataset('dumptruck')">Dump
-              truck</button>
-            <button class="button is-rounded is-dark is-small" id="turtle"
-              onclick="setDataset('turtle')">Turtle</button>
-            <button class="button is-rounded is-dark is-small" id="drawing"
-              onclick="setDataset('drawing')">Drawing</button>
-            <button class="button is-rounded is-dark is-small" id="backpack"
-              onclick="setDataset('backpack')">Backpack</button>
-            <button class="button is-rounded is-dark is-small" id="bear" onclick="setDataset('bear')">Bear</button>
-            <button class="button is-rounded is-dark is-small" id="billiards"
-              onclick="setDataset('billiards')">Billiards</button>
-            <button class="button is-rounded is-dark is-small" id="norway"
-              onclick="setDataset('norway')">Norway</button>
-            <button class="button is-rounded is-dark is-small" id="cat" onclick="setDataset('cat')">Cat</button>
-            <button class="button is-rounded is-dark is-small" id="boot" onclick="setDataset('boot')">Boot</button>
-            <button class="button is-rounded is-dark is-small" id="office"
-              onclick="setDataset('office')">Office</button>
-          </div>
-        </div>
-      </div>
-      <div class="container is-max-widescreen">
-        <video id="comparison-video-0" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos_comparison/dumptruck-masked-nerf.mp4" type="video/mp4">
-        </video>
-        <video id="comparison-video-1" autoplay muted loop playsinline hidden height="100%">
-          <source src="./static/videos_comparison/dumptruck-masked-nerf.mp4" type="video/mp4">
-        </video>
-      </div>
-      <script>
-        video0 = document.getElementById("comparison-video-0");
-        video1 = document.getElementById("comparison-video-1");
-        video0.addEventListener('loadedmetadata', function () {
-          if (activeVidID == 0) {
-            video0.play();
-            video0.hidden = false;
-            video1.hidden = true;
-          }
-        });
-        video1.addEventListener('loadedmetadata', function () {
-          if (activeVidID == 1) {
-            video1.play();
-            video0.hidden = true;
-            video1.hidden = false;
-          }
-        });
-        setComparisonVideo();
-      </script>
-    </div>
 
   </section>
 
