@@ -162,56 +162,56 @@
         <div id="results-carousel" class="carousel_splats results-carousel">
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/bobs-burgers.mp4" type="video/mp4">
+              <source src="./static/assets/bobs-burgers.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/family-guy-house.mp4" type="video/mp4">
+              <source src="./static/assets/family-guy-house.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/krusty-krab.mp4" type="video/mp4">
+              <source src="./static/assets/krusty-krab.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/rick-and-morty.mp4" type="video/mp4">
+              <source src="./static/assets/smith-residence.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/simpsons-house.mp4" type="video/mp4">
+              <source src="./static/assets/simpsons-house.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/spirited-away.mp4" type="video/mp4">
+              <source src="./static/assets/spirited-away.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/planet-express.mp4" type="video/mp4">
+              <source src="./static/assets/planet-express.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/family-guy-dining.mp4" type="video/mp4">
+              <source src="./static/assets/family-guy-dining.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/avatar-house.mp4" type="video/mp4">
+              <source src="./static/assets/avatar-house.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/bojack-room.mp4" type="video/mp4">
+              <source src="./static/assets/bojack-room.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/magic-school-bus.mp4" type="video/mp4">
+              <source src="./static/assets/magic-school-bus.mp4" type="video/mp4">
             </video>
             <br>
             <video poster="" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/splats/mystery-machine.mp4" type="video/mp4">
+              <source src="./static/assets/mystery-machine.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -252,42 +252,161 @@
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Completing Large Unknown Regions</h2>
+          <h2 class="title is-3">Cartoon Reconstruction</h2>
+          <div class="content has-text-centered">
+            <p>
+              (Left) We first recover camera poses and aligned point clouds. (Right) Then we initialize Gaussians from
+              our dense point
+              cloud and optimize Gaussian Splatting with the recovered
+              cameras. Our method has depth regularization and is built on <a
+                href="https://docs.nerf.studio/">Nerfstudio</a>. Here we show fly-through renders of our scenes.
+          </div>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/assets/bobs-burgers-side-by-side.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>Here is the gallery of all our scenes. Can you guess which is which? Click to reveal names.</p>
+          <button class="button is-info is-rounded" onclick="toggleCartoonNames()">Toggle Cartoon Names</button>
+        </div>
+        <div id="results-carousel" class="carousel_splats results-carousel">
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Bob's Burgers
+            </h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/bobs-burgers.mp4" type="video/mp4">
+            </video>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Family Guy</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/family-guy-house.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">SpongeBob
+              SquarePants</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/krusty-krab.mp4" type="video/mp4">
+            </video>
+            <br>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Rick and Morty
+            </h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/smith-residence.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Simpsons</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/simpsons-house.mp4" type="video/mp4">
+            </video>
+            <br>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Spirited Away
+            </h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/spirited-away.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Futurama</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/planet-express.mp4" type="video/mp4">
+            </video>
+            <br>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Family Guy</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/family-guy-dining.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Avatar</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/avatar-house.mp4" type="video/mp4">
+            </video>
+            <br>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">BoJack Horseman
+            </h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/bojack-room.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Magic School Bus
+            </h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/magic-school-bus.mp4" type="video/mp4">
+            </video>
+            <br>
+            <h4 class="title is-4 has-text-centered cartoon-name is-hidden" style="margin-bottom: 4px;">Scooby-Doo</h4>
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/assets/mystery-machine.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleCartoonNames() {
+        // Select all elements with the class 'cartoon-name'
+        var names = document.querySelectorAll('.cartoon-name');
+
+        // Toggle the 'is-hidden' class for each element
+        names.forEach(function (name) {
+          name.classList.toggle('is-hidden');
+        });
+      }
+    </script>
+
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
           <div class="content has-text-justified">
             <p>
-              Using <span class="my-method-name">NeRFiller</span>, we can iteratively update a dataset to inpaint a
-              scene. Our
-              methods are shown on the bottom right against various baselines. Click <a
-                href="./static/videos/3D_consistent_image_inpainting.mp4">here</a> to see all results of the
-              baselines on 10 datasets. "LaMask" and "SD Image Cond" are our adaptations of SPIn-NeRF to our problem
-              setting. "Inpaint + DU" is an adaptation of Instruct-NeRF2NeRF.
+              We first predict the depth of each image with <a href="https://github.com/prs-eth/Marigold">Marigold</a>
+              and obtain candidate transient masks with <a href="https://segment-anything.com/">SAM</a>. We then label
+              images with the <span class="my-method-name">Toon3D
+                Labeler</span> to obtain correspondences and mark transient regions. We optimize camera poses and warp
+              images to obtain calibrated, perspective cameras. Finally, we can initialize Gaussians with the aligned
+              dense point cloud and run refinement.
             </p>
           </div>
         </div>
       </div>
       <div class="hero-body">
-        <div class="container is-max-widescreen">
-          <div id="blender-carousel" class="carousel1 results-carousel">
-            <div class="item">
-              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/office_occluder.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item">
-              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/drawing_occluder.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item">
-              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/billiards_occluder.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div class="container" style="display: flex;">
+          <img src="static/images/method.png" style="height: auto;">
+        </div>
+      </div>
+      <div class="content has-text-centered" style="margin-bottom: 10px;">
+        <p>Here you can see the two major steps of our method. The sparse alignment video shows rough camera parameter
+          estimation. The dense alignment video shows various layers used in the method (e.g., cameras, sparse
+          correspondences, warping meshes, etc.) and how they align in 3D.</p>
+      </div>
+      <!-- Columns container -->
+      <div class="columns">
+        <div class="column is-half">
+          <h4 class="title is-4 has-text-centered">Sparse Alignment</h4>
+          <div class="method-video">
+            <video id="sparse-alignment-video" controls autoplay muted loop playsinline width="100%">
+              <source src="./static/assets/sparse-alignment.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column is-half">
+          <h4 class="title is-4 has-text-centered">Dense Alignment</h4>
+          <div class="method-video">
+            <video id="sparse-alignment-video" controls autoplay muted loop playsinline width="100%">
+              <source src="./static/assets/dense-alignment.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 
 
@@ -298,20 +417,21 @@
           <h2 class="title is-3">Explore Inside Rick and Morty's House</h2>
           <div class="content has-text-centered" style="margin-bottom: 10px;">
             <p>We reconstruct inside the Rick and Morty house by labeling between walls and ceilings to connect the
-              rooms. In the first video, we show the point cloud & cameras and our custom labeling interface. In the second video, you can scrub the slider to
+              rooms. In the first video, we show the point cloud & cameras and our custom labeling interface. In the
+              second video, you can scrub the slider to
               see a walkthrough inside the house! The closest camera's image is shown in the bottom right corner.</p>
           </div>
           <!-- Columns container -->
           <div class="columns">
             <div class="column is-half">
               <video id="labeling-rick-and-morty-video" controls autoplay muted loop playsinline width="100%">
-                <source src="./static/rick-and-morty/labeling-rick-and-morty.mp4" type="video/mp4">
+                <source src="./static/assets/labeling-rick-and-morty.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column is-half">
               <input type="range" id="video-scrubber" min="0" value="0" step="1" style="width: 100%;">
               <video id="rick-and-morty-video" autoplay muted loop playsinline width="100%">
-                <source src="./static/rick-and-morty/rick-and-morty.mp4" type="video/mp4">
+                <source src="./static/assets/rick-and-morty.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -375,15 +495,16 @@
 
   <section class="section">
     <div class="container is-max-widescreen">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Reference-Based Inpainting</h2>
+          <h2 class="title is-3">Sparse-View Reconstruction</h2>
           <div class="content has-text-centered">
             <p>
-              Using <span class="my-method-name">NeRFiller</span>, you can inpaint one image and use it as a reference
-              to guide
-              the 3D infilling.
+              We can reconstruct scenes from few images and with large
+              viewpoint changes. Where COLMAP may fail, we can intervene with the <span class="my-method-name">Toon3D
+                Labeler</span> to obtain human-labeled correspondences. Here we show a
+              fly-through rendering for two rooms ("Living room" and "Bedroom 2") of <a
+                href="https://www.airbnb.com/rooms/833261990707199349">this Airbnb listing</a>.
             </p>
           </div>
         </div>
@@ -393,17 +514,12 @@
           <div id="blender-carousel" class="carousel1 results-carousel">
             <div class="item">
               <video poster="" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/bear_reference.mp4" type="video/mp4">
+                <source src="./static/assets/Living-room.mp4" type="video/mp4">
               </video>
             </div>
             <div class="item">
               <video poster="" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/billiards_reference.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/cat_reference.mp4" type="video/mp4">
+                <source src="./static/assets/Bedroom-2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -412,31 +528,44 @@
     </div>
   </section>
 
-  <!-- Method. -->
   <section class="section">
     <div class="container is-max-widescreen">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Method</h2>
-          <div class="content has-text-justified">
+          <h2 class="title is-3">Visualizing Inconsistencies</h2>
+          <div class="content has-text-centered">
             <p>
-              We find that tiling images in a 2x2 grid produces more 3D consistent inpaints. We extend this "Grid Prior"
-              property to more than 4 images by averaging diffusion model predictions, and we show how to use it
-              iteratively in the NeRF framework with dataset updates. Please see <a
-                href="http://arxiv.org/abs/2312.04560">the paper</a> for more
-              details.
+              Cartoons are hand-drawn so we need to warp the images to be 3D consistent. The first item is a video that
+              shows the warp taking place during alignment optimization.
+              The next two items are images which show the original and warped drawings, as well as the overlap between
+              the two. Blurry
+              regions indicate where a lot of warp occured.
             </p>
           </div>
         </div>
       </div>
       <div class="hero-body">
-        <div class="container" style="display: flex;">
-          <img src="static/images/method.png" style="height: auto;">
+        <div class="container is-max-widescreen">
+          <div id="blender-carousel" class="carousel2 results-carousel">
+            <div class="item">
+              <h4 class="title is-4 has-text-centered">Video</h4>
+              <video poster="" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/assets/visualizing-inconsistencies-3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item">
+              <h4 class="title is-4 has-text-centered">Image</h4>
+              <img src="./static/assets/visualizing-inconsistencies-1.png" style="height: auto;">
+            </div>
+            <div class="item">
+              <h4 class="title is-4 has-text-centered">Image</h4>
+              <img src="./static/assets/visualizing-inconsistencies-2.png" style="height: auto;">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!--/ Method. -->
 
   <!-- Multi-View Consistent Inpainting. -->
   <section class="section">
@@ -444,34 +573,21 @@
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Multi-View Consistent Inpainting</h2>
+          <h2 class="title is-3">Reconstructing Paintings</h2>
           <div class="content has-text-justified">
             <p>
-              With <span class="my-method-name">NeRFiller</span>, we can inpaint many images jointly. We accomplish this
-              by using
-              the our "Grid Prior" and "Joint Multi-View Inpainting" strategies. We compare various inpainting
-              strategies, where we inpaint once and then NeRF the scene to check for 3D consistency. Click <a
-                href="./static/videos/multi-view_consistent_inpainting_eval_split.mp4">here</a> to see all
-              results for all baselines on all 8 NeRF-synthetic scenes, for the test splits. "SD" stands for Stable
-              Diffusion. "Extended Attention" is introduced in <a href="https://tuneavideo.github.io/">Tune-A-Video</a>.
+              We can reconstruct paintings with <span class="my-method-name">Toon3D</span> even though the paintings are
+              hand-drawn. We predict the depth of each image, then align and warp point clouds. Finally we use Gaussian
+              refinement to create the video shown below.
             </p>
           </div>
         </div>
       </div>
       <div class="hero-body">
         <div class="container is-max-widescreen">
-          <div id="blender-carousel" class="carousel1 results-carousel">
-            <div class="item">
-              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/lego_inpainting.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item">
-              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/chair_inpainting.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/assets/reconstructing-paintings.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -488,7 +604,10 @@
 
           <div class="content has-text-justified">
             <p>
-              This project is supported in part by IARPA DOI/IBC 140D0423C0035. We would like to thank...
+              This project is supported in part by IARPA DOI/IBC 140D0423C0035. The views and conclusions contained
+              herein are those of the authors and do not represent the official policies or endorsements of IARPA,
+              DOI/IBC, of the U.S. Government. We would like to thank Matthew Tancik, Justin Kerr, Qianqian Wang,
+              David McAllister, Evonne Ng, Georgios Pavlakos, and the KAIR lab for discussions and feedback.
             </p>
           </div>
         </div>
@@ -504,11 +623,11 @@
     <div class="container is-max-widescreen content">
       <h2 class="title">BibTeX</h2>
       <p>Please consider citing our work if you find it useful.</p>
-      <pre><code>@inproceedings{weber2023nerfiller,
-  title = {NeRFiller: Completing Scenes via Generative 3D Inpainting},
-  author = {Ethan Weber and Aleksander Holynski and Varun Jampani and Saurabh Saxena and
-    Noah Snavely and Abhishek Kar and Angjoo Kanazawa},
-  booktitle = {CVPR},
+      <pre><code>@inproceedings{weber2023toon3d,
+  title = {Toon3D: Seeing Cartoons from a New Perspective},
+  author = {Ethan Weber and Riley Peterlinz and Rohan Mathur and
+    Frederik Warburg and Alexei A. Efros and Angjoo Kanazawa},
+  booktitle = {arXiv},
   year = {2024},
 }
 </code></pre>

@@ -47,6 +47,15 @@ $(document).ready(function() {
 			autoplaySpeed: 3000,
     }
 
+    var options2 = {
+			slidesToScroll: 1,
+			slidesToShow: 2,
+			loop: true,
+			infinite: false,
+			autoplay: false,
+			autoplaySpeed: 3000,
+    }
+
     var options_splats = {
 			slidesToScroll: 1,
 			slidesToShow: 3,
@@ -59,6 +68,7 @@ $(document).ready(function() {
 		// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
     var carousels = bulmaCarousel.attach('.carousel1', options1);
+    var carousels = bulmaCarousel.attach('.carousel2', options2);
     var carousels = bulmaCarousel.attach('.carousel_splats', options_splats);
 
     // Loop on each carousel initialized
