@@ -153,12 +153,14 @@
 
   <section class="hero is-light">
     <div class="hero-body">
-      <div class="content has-text-centered">
-        <p style="text-align: center">We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes. We
-          align backprojected monocular depth maps while warping images. refine the aligned point clouds with Gaussian optimization.<br>These scenes have sparse viewpoints as input,
-          ranging from only 4 to as many as 12 hand-drawn images.</p>
-      </div>
-      <div class="container">
+      <div class="container is-max-widescreen">
+        <div class="content has-text-centered">
+          <p style="text-align: center">We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes.
+            We
+            align backprojected monocular depth predictions while simultaneously warping images at keypoints. We refine the aligned
+            point clouds with Gaussian optimization. These scenes have sparse viewpoints as input,
+            ranging from only 4 to as many as 12 hand-drawn images.</p>
+        </div>
         <div id="results-carousel" class="carousel_teaser results-carousel">
           <div class="item">
             <div class="teaser-video-container">

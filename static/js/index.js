@@ -67,7 +67,7 @@ $(document).ready(function() {
 
     var options_teaser = {
 			slidesToScroll: 1,
-			slidesToShow: 6,
+			slidesToShow: 3,
 			loop: true,
 			infinite: false,
 			autoplay: false,
