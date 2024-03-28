@@ -157,85 +157,88 @@
         <div class="content has-text-centered">
           <p style="text-align: center">We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes.
             We
-            align backprojected monocular depth predictions while simultaneously warping images at keypoints. We refine the aligned
+            align backprojected monocular depth predictions while simultaneously warping images at keypoints. We refine
+            the aligned
             point clouds with Gaussian optimization. These scenes have sparse viewpoints as input,
-            ranging from only 4 to as many as 12 hand-drawn images.</p>
+            ranging from only 4 to as many as 12 hand-drawn images. Press the button to move the cameras between two
+            viewpoints!</p>
+          <button id="playAllVideos" class="button is-info is-rounded">Move Cameras</button>
         </div>
         <div id="results-carousel" class="carousel_teaser results-carousel">
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-0-5-mystery-machine-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-0-6-bobs-burgers-loop.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-0-2-smith-residence-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-1-5-krusty-krab-loop.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-3-4-family-guy-dining-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-2-4-spirited-away-loop.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-1-3-family-guy-house-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-1-7-avatar-house-loop.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-2-3-magic-school-bus-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-4-9-bojack-room-loop.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="item">
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-2-4-simpsons-house-loop.mp4" type="video/mp4">
               </video>
             </div>
             <br>
             <div class="teaser-video-container">
-              <video poster="" autoplay controls muted loop playsinline height="100%">
+              <video poster="" controls muted playsinline height="100%">
                 <source src="./static/assets/interpolated-1-3-planet-express-loop.mp4" type="video/mp4">
               </video>
             </div>
@@ -244,6 +247,17 @@
       </div>
     </div>
   </section>
+  <script>
+    $(document).ready(function () {
+      // When the "Play All Videos" button is clicked
+      $('#playAllVideos').click(function () {
+        // Find all video elements within the teaser-video-container and play them
+        $('.teaser-video-container video').each(function () {
+          this.play();
+        });
+      });
+    });
+  </script>
 
 
   <section class="section">
