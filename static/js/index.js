@@ -65,11 +65,21 @@ $(document).ready(function() {
 			autoplaySpeed: 3000,
     }
 
+    var options_teaser = {
+			slidesToScroll: 1,
+			slidesToShow: 6,
+			loop: true,
+			infinite: false,
+			autoplay: false,
+			autoplaySpeed: 3000,
+    }
+
 		// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
     var carousels = bulmaCarousel.attach('.carousel1', options1);
     var carousels = bulmaCarousel.attach('.carousel2', options2);
     var carousels = bulmaCarousel.attach('.carousel_splats', options_splats);
+    var carousels = bulmaCarousel.attach('.carousel_teaser', options_teaser);
 
     // Loop on each carousel initialized
     for(var i = 0; i < carousels.length; i++) {
