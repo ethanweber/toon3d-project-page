@@ -545,6 +545,143 @@
 
   </section>
 
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Point Clouds and Cameras</h2>
+          <div class="content has-text-centered">
+            <p>
+              Here we show point clouds and recovered cameras for the 12 cartoon scenes in the <span
+                class="my-method-name">Toon3D Dataset</span>. Click the icons to explore our scenes!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+
+            <div id="iframe-container">
+              Click a scene icon to start!
+            </div>
+
+            <div class="control-buttons" style="display: none;">
+              <button id="point-cloud-name" class="button is-info is-outlined" style="color: black;" disabled>Point
+                cloud
+                name</button>
+              <button class="button is-info is-rounded" id="full-screen-button" onclick="fullscreen()">Fullscreen
+                👐</button>
+            </div>
+            <script>
+              // Create a function to open the iframe in fullscreen in a new tab
+              function fullscreen() {
+                var elem = document.getElementById('iframe-container').querySelector('iframe');
+                window.open(elem.src, '_blank');
+              }
+            </script>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                function createAndDisplayIframe(iframeId, iframeSrc) {
+                  let existingIframe = document.getElementById(iframeId);
+
+                  // Hide all iframes first
+                  document.querySelectorAll('.iframe').forEach(iframe => iframe.style.display = 'none');
+
+                  if (!existingIframe) {
+                    // If iframe does not exist, create and append it
+                    const iframe = document.createElement('iframe');
+                    iframe.id = iframeId;
+                    iframe.src = iframeSrc;
+                    iframe.style.display = 'block'; // Show the new iframe
+                    iframe.setAttribute('class', 'iframe');
+                    document.getElementById('iframe-container').innerHTML = ''; // Clear the container
+                    document.getElementById('iframe-container').appendChild(iframe);
+                  } else {
+                    // If iframe exists, just display it
+                    existingIframe.style.display = 'block';
+                  }
+                }
+
+                // Event listener for thumbnail buttons
+                document.querySelectorAll('.thumbnail-btn').forEach(button => {
+                  button.addEventListener('click', () => {
+                    const iframeId = button.getAttribute('data-iframe-id');
+                    const iframeSrc = button.getAttribute('data-iframe-src');
+                    createAndDisplayIframe(iframeId, iframeSrc);
+
+                    // show control buttons
+                    document.querySelector('.control-buttons').style.display = 'block';
+
+                    // set the point cloud name to the button's alt text
+                    document.getElementById('point-cloud-name').innerText = button.querySelector('img').alt;
+
+                    // set the button to have the active class
+                    document.querySelectorAll('.thumbnail-btn').forEach(btn => btn.classList.remove('is-active'));
+                    button.classList.add('is-active');
+                  });
+                });
+              });
+            </script>
+
+            <div class="thumbnails">
+              <button class="thumbnail-btn" data-iframe-id="basingse-house"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/basingse-house.viser">
+                <img src="./static/assets/thumbnails/basingse-house.png" alt="Ba Sing Se House" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="bobs-burgers-dining"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/bobs-burgers-dining.viser">
+                <img src="./static/assets/thumbnails/bobs-burgers-dining.jpeg" alt="Bob's Burgers" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="bojak-inside"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/bojak-inside.viser">
+                <img src="./static/assets/thumbnails/bojack-house.jpeg" alt="BoJack Room" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="family-guy-dining"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/family-guy-dining.viser">
+                <img src="./static/assets/thumbnails/family-guy-dining.jpg" alt="Family Guy Dining" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="family-guy-house"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/family-guy-house.viser">
+                <img src="./static/assets/thumbnails/family-guy-house.jpeg" alt="Family Guy House" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="krusty-krab-inside"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/krusty-krab-inside.viser">
+                <img src="./static/assets/thumbnails/krusty-krab-inside.jpeg" alt="Krusty Krab" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="magic-school-bus"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/magic-school-bus.viser">
+                <img src="./static/assets/thumbnails/magic-school-bus.jpeg" alt="Magic School Bus" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="mystery-machine"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/mystery-machine.viser">
+                <img src="./static/assets/thumbnails/mystery-machine.jpeg" alt="Mystery Machine" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="planet-express"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/planet-express.viser">
+                <img src="./static/assets/thumbnails/planet-express.jpeg" alt="Planet Express" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="simpsons-house"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/simpsons-house.viser">
+                <img src="./static/assets/thumbnails/simpsons-house.jpg" alt="The Simpsons' House" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="smith-residence"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/smith-residence.viser">
+                <img src="./static/assets/thumbnails/smith-residence.jpeg" alt="Smith Residence" />
+              </button>
+              <button class="thumbnail-btn" data-iframe-id="spirited-away-train"
+                data-iframe-src="https://cardiacmangoes.github.io/viser-embed/?playbackPath=https://cardiacmangoes.github.io/viser-embed/toon3d/spirited-away-train.viser">
+                <img src="./static/assets/thumbnails/spirited-away.jpeg" alt="Spirited Away" />
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="section">
     <div class="container is-max-widescreen">

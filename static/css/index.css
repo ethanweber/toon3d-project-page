@@ -183,3 +183,61 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* point cloud stuff */
+
+.thumbnails {
+  padding-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Starts with 12 columns */
+  gap: 10px; /* Adjust the gap between thumbnails as needed */
+}
+
+@media (max-width: 768px) {
+  .thumbnails {
+    grid-template-columns: repeat(6, 1fr); /* Changes to 6 columns on smaller screens */
+  }
+}
+
+.thumbnail-btn {
+  aspect-ratio: 1 / 1; /* Makes each button square */
+  border: 0.5px solid #af9f9f; /* Example: 1px solid black border */
+  border-radius: 10px;
+  padding: 0; /* Removes padding around the image */
+  overflow: hidden; /* Ensures nothing overflows the button boundaries */
+}
+
+.thumbnail-btn img {
+  width: 100%; /* Makes the image fill its container's width */
+  object-fit: cover; /* Ensures the image covers the button area without distortion */
+}
+
+
+.thumbnail-btn:hover   {
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Take at least the full height of the viewport */
+  flex-direction: column; /* Stack child elements vertically */
+  text-align: center; /* Center the text for any text inside the container */
+}
+
+.iframe {
+  width: 100%;
+  border: 2px solid #000; /* Example: 2px solid black border */
+  height: 500px; /* Adjust the height as necessary */
+}
+
+.control-buttons {
+  padding-top: 8px;
+}
+
+.is-active {
+  border: 2px solid #000;
+  border-radius: 10px;
+}
