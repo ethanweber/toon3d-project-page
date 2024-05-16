@@ -152,8 +152,7 @@
     <div class="container is-max-widescreen">
       <div class="hero-body">
         <h2 class="subtitle has-text-centered">
-          TLDR: <span class="my-method-name">Toon3D</span> lifts cartoons into 3D via aligning and warping backprojected
-          monocular depth predictions.
+          <b>TLDR</b><br><i>Humans can perceive 3D world from images that aren't 3D consistent, but why can't machines?</i><br>COLMAP cannot reconstruct non-geometric hand-drawn images even with perfect correspondences!<br><span class="my-method-name">Toon3D</span> can recover camera poses and dense geometry with piecewise-rigid deformable optimization.<br>
         </h2>
         <img src="static/images/teaser.png" style="height: auto;">
       </div>
@@ -165,13 +164,17 @@
     <div class="hero-body">
       <div class="container is-max-widescreen">
         <div class="content has-text-centered">
-          <p style="text-align: center">We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes.
-            We
-            align backprojected monocular depth predictions while simultaneously warping images at keypoints. We refine
+          <p style="text-align: center">
+            <!-- We run <span class="my-method-name">Toon3D</span> on 12 popular cartoon scenes. -->
+            <!-- We
+            align backprojected monocular depth predictions with a piecewise-rigid deformation at 3D keypoints. We refine
             the aligned
             point clouds with Gaussian optimization. These scenes have sparse viewpoints as input,
             ranging from only 4 to as many as 12 hand-drawn images. Press the button to move the cameras between two
-            viewpoints!</p>
+            viewpoints! -->
+            Hand-drawn scenes are not 3D consistent, so we create <span class="my-method-name">Toon3D</span> to recover camera poses and dense geometry! We do this with a piecewise-rigid deformation optimization at hand-labeled keypoints and using monocular depth as a prior. Now we can interpolate novel views never before seen! Press the button to move the cameras between two
+            viewpoints! <i>Note that we reconstruct the scenes with more than two hand-drawn images, but this demo shows a smooth transition between just two of the inputs views.</i>
+          </p>
           <button id="playAllVideos" class="button is-info is-rounded">Move Cameras</button>
         </div>
         <div id="results-carousel" class="carousel_teaser results-carousel">
@@ -278,17 +281,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose <span class="my-method-name">Toon3D</span>. In this work, we recover the underlying 3D
-              structure of non-geometrically consistent scenes. In
-              particular, we focus on cartoons. Many cartoons are created by artists without a 3D rendering engine,
-              which means that any new image of a scene is hand-drawn. The hand-drawn images are usually faithful
-              representations of the world, but only in a qualitative sense, since it is difficult for humans to draw
-              multiple perspectives of an object or scene 3D consistently. In this work, we correct for 2D drawing
-              inconsistencies to recover a plausible 3D structure such that the newly warped drawings are consistent
-              with each other. Our pipeline consists of a user-friendly annotation tool, camera pose estimation, and
-              image deformation to recover a dense structure. Our warped images use a perspective camera model, enabling
-              our aligned results to be plugged into novel-view synthesis reconstruction methods to experience cartoons
-              from viewpoints never drawn before.
+              We propose <span class="my-method-name">Toon3D</span>. In this work, we recover the underlying 3D structure of non-geometrically consistent scenes. We focus our analysis on hand-drawn images from cartoons and anime. Many cartoons are created by artists without a 3D rendering engine, which means that any new image of a scene is hand-drawn. The hand-drawn images are usually faithful representations of the world, but only in a qualitative sense, since it is difficult for humans to draw multiple perspectives of an object or scene 3D consistently. Nevertheless, people can easily perceive 3D scenes from inconsistent inputs! In this work, we correct for 2D drawing inconsistencies to recover a plausible 3D structure such that the newly warped drawings are consistent with each other. Our pipeline consists of a user-friendly annotation tool, camera pose estimation, and image deformation to recover a dense structure. Our method warps images to obey a perspective camera model, enabling our aligned results to be plugged into novel-view synthesis reconstruction methods to experience cartoons from viewpoints never drawn before.
             </p>
           </div>
         </div>
@@ -821,7 +814,8 @@
 
           <div class="content has-text-justified">
             <p>
-              We would like to thank Qianqian Wang, Justin Kerr, Brent Yi, David McAllister, Matthew Tancik, Evonne Ng, Anjali Thakrar, Christian Foley,
+              We would like to thank Qianqian Wang, Justin Kerr, Brent Yi, David McAllister, Matthew Tancik, Evonne Ng,
+              Anjali Thakrar, Christian Foley,
               Abhishek Kar, Georgios Pavlakos, the Nerfstudio team, and the KAIR lab for discussions, feedback, and
               technical support. We also thank Ian Mitchell and Roland Jose for helping to label points.
             </p>
