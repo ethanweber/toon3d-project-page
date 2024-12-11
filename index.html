@@ -12,12 +12,12 @@
     gtag('config', 'G-0EK65KNDVK');
   </script>
 
-  <meta content="Toon3D: Seeing Cartoons from a New Perspective" name="description" />
-  <meta content="Toon3D: Seeing Cartoons from a New Perspective" property="og:title" />
-  <meta content="Toon3D: Seeing Cartoons from a New Perspective" property="og:description" />
+  <meta content="Toon3D: Seeing Cartoons from New Perspectives" name="description" />
+  <meta content="Toon3D: Seeing Cartoons from New Perspectives" property="og:title" />
+  <meta content="Toon3D: Seeing Cartoons from New Perspectives" property="og:description" />
   <meta content="https://toon3d.studio/static/images/teaser.png" property="og:image" />
-  <meta content="Toon3D: Seeing Cartoons from a New Perspective" property="twitter:title" />
-  <meta content="Toon3D: Seeing Cartoons from a New Perspective" property="twitter:description" />
+  <meta content="Toon3D: Seeing Cartoons from New Perspectives" property="twitter:title" />
+  <meta content="Toon3D: Seeing Cartoons from New Perspectives" property="twitter:description" />
   <meta content="https://toon3d.studio/static/images/teaser.png" property="twitter:image" />
   <meta property="og:type" content="website" />
   <meta content="summary_large_image" name="twitter:card" />
@@ -61,7 +61,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title" style="font-family: Marker Felt; font-weight: bold">Toon3D: Seeing
-              Cartoons from a New Perspective</h1>
+              Cartoons from New Perspectives</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://ethanweber.me/">Ethan Weber*</a><sup>2</sup>,</span>
@@ -129,7 +129,7 @@
                 </span>
                 <!-- Toon3D Overview Video. -->
                 <span class="link-block">
-                  <a href="https://youtu.be/tJ7UKALsF-0" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://youtu.be/Ymjoroq4TtQ" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-youtube"></i>
                     </span>
@@ -149,11 +149,23 @@
     <div class="container is-max-widescreen">
       <div class="hero-body">
         <h2 class="subtitle has-text-centered">
-          <b>TLDR</b><br><i>Humans can perceive 3D world from images that aren't 3D consistent, but why can't
-            machines?</i><br>COLMAP cannot reconstruct non-geometric hand-drawn images even with perfect
-          correspondences!<br><span class="my-method-name">Toon3D</span> can recover camera poses and dense geometry
-          with piecewise-rigid deformable optimization.<br>
-        </h2>
+          <i>Humans can perceive 3D world from images that aren't 3D consistent, but machines cannot. Let's fix this!</i><br><br>COLMAP fails to reconstruct non-geometric hand-drawn images, even with perfect
+          correspondences! Other methods, including Bundle Adjustment and DUSt3R, perform very badly. We compare with these baselines both qualitatively and quantitatiely, and we find our method to be superior. Please watch the video to understand our problem setting and read the paper for more details! We also include an ablation study in the paper to provide insights about our method.
+          </h2>
+
+          
+          <!-- <span class="my-method-name">Toon3D</span> can recover camera poses and dense geometry -->
+          <!-- with piecewise-rigid deformable optimization.<br> -->
+
+        <!-- <h2 class="subtitle has-text-centered"> We compare with other methods including Bundle Adjustment and DUSt3R both -->
+          <!-- qualitatively and quantitatiely, and we find our method to be superior. Please watch the video for some -->
+          <!-- qualitative results and read the paper for more details! We also have lots of ablations in the paper to check out to learn more about our method. -->
+        <!-- </h2> -->
+        <h2 class="subtitle has-text-centered">Overview Video</h2>
+        <iframe src="https://www.youtube.com/embed/Ymjoroq4TtQ"
+          style="width: 640px; height: 360px; display: block; margin: 1rem auto;">
+        </iframe>
+        <h2 class="subtitle has-text-centered">Framework Overview</h2>
         <img src="static/images/teaser.png" style="height: auto;">
       </div>
     </div>
@@ -174,7 +186,8 @@
             viewpoints! -->
             Hand-drawn scenes are not 3D consistent, so we create <span class="my-method-name">Toon3D</span> to recover
             camera poses and dense geometry! We do this with a piecewise-rigid deformation optimization at hand-labeled
-            keypoints and using monocular depth as a prior. Now we can interpolate novel views never before seen! Press
+            keypoints and guide the process with structure inferred from monocular depth predictions. Now we can
+            interpolate novel views never before seen! Press
             the button to move the cameras between two
             viewpoints! <i>Note that we reconstruct the scenes with more than two hand-drawn images, but this demo shows
               a smooth transition between just two of the inputs views.</i>
@@ -285,7 +298,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose <span class="my-method-name">Toon3D</span>. In this work, we recover the underlying 3D
+              <!-- We propose <span class="my-method-name">Toon3D</span>. In this work, we recover the underlying 3D
               structure of non-geometrically consistent scenes. We focus our analysis on hand-drawn images from cartoons
               and anime. Many cartoons are created by artists without a 3D rendering engine, which means that any new
               image of a scene is hand-drawn. The hand-drawn images are usually faithful representations of the world,
@@ -295,7 +308,21 @@
               that the newly warped drawings are consistent with each other. Our pipeline consists of a user-friendly
               annotation tool, camera pose estimation, and image deformation to recover a dense structure. Our method
               warps images to obey a perspective camera model, enabling our aligned results to be plugged into
-              novel-view synthesis reconstruction methods to experience cartoons from viewpoints never drawn before.
+              novel-view synthesis reconstruction methods to experience cartoons from viewpoints never drawn before. -->
+              We recover the underlying 3D structure from images of cartoons and anime depicting the same scene. This is
+              an interesting problem domain because images in creative media are often depicted without explicit
+              geometric consistency for storytelling and creative expression—they are only 3D in a qualitative sense.
+              While humans can easily perceive the underlying 3D scene from these images, existing Structure-from-Motion
+              (SfM) methods that assume 3D consistency fail catastrophically. We present <span
+                class="my-method-name">Toon3D</span> for reconstructing geometrically inconsistent images. Our key
+              insight is to deform the input images while recovering camera poses and scene geometry, effectively
+              explaining away geometrical inconsistencies to achieve consistency. This process is guided by the
+              structure inferred from monocular depth predictions. We curate a dataset with multi-view imagery from
+              cartoons and anime that we annotate with reliable sparse correspondences using our user-friendly
+              annotation tool. Our recovered point clouds can be plugged into novel-view synthesis methods to experience
+              cartoons from viewpoints never drawn before. We evaluate against classical and recent learning-based SfM
+              methods, where <span class="my-method-name">Toon3D</span> is able to obtain more reliable camera poses and
+              scene geometry.
             </p>
           </div>
         </div>
@@ -426,9 +453,10 @@
             <p>
               We first predict the depth of each image with <a href="https://github.com/prs-eth/Marigold">Marigold</a>
               and obtain candidate transient masks with <a href="https://segment-anything.com/">SAM</a>. We then label
-              images with the <span class="my-method-name">Toon3D
+              images with the <span class="my-method-name"><a href="https://labeler.toon3d.studio/">Toon3D Labeler</a>
                 Labeler</span> to obtain correspondences and mark transient regions. We optimize camera poses and warp
-              images to obtain calibrated, perspective cameras. Finally, we can initialize Gaussians with the aligned
+              images to obtain calibrated, perspective cameras. You can use our labeler tool <a
+                href="https://labeler.toon3d.studio/">here</a>. Finally, we can initialize Gaussians with the aligned
               dense point cloud and run refinement.
             </p>
           </div>
@@ -444,7 +472,8 @@
           </div>
         </div>
         <div class="column is-half">
-          <h4 class="title is-4 has-text-centered my-method-name">Toon3D Labeler</h4>
+          <h4 class="title is-4 has-text-centered my-method-name"><a href="https://labeler.toon3d.studio/">Toon3D
+              Labeler</a></h4>
           <div class="method-video">
             <video id="sparse-alignment-video" controls autoplay muted loop playsinline width="100%">
               <source src="./static/assets/toon3d-labeler.mp4" type="video/mp4">
@@ -453,14 +482,16 @@
         </div>
       </div>
       <div class="content has-text-centered" style="margin-bottom: 10px;">
-        <p>Here you can see the two major steps of our method. The sparse alignment video shows rough camera parameter
-          estimation. The dense alignment video shows various layers used in the method (e.g., cameras, sparse
-          correspondences, warping meshes, etc.) and how they align in 3D.</p>
+        <p>Here you can see the two major objectives of our method. The camera alignment objective recovers camera
+          parameter. The deformation alignment objective warps the meshes for closer alignment. In practice, we optimize
+          for both objectives at the same time. In the Deformation Alignment video, we show various layers used in the
+          method (e.g., cameras, sparse
+          correspondences, warping meshes, point clouds, and gaussians) and observe their alignment in 3D.</p>
       </div>
       <!-- Columns container -->
       <div class="columns">
         <div class="column is-half">
-          <h4 class="title is-4 has-text-centered">Sparse Alignment</h4>
+          <h4 class="title is-4 has-text-centered">Camera Alignment</h4>
           <div class="method-video">
             <video id="sparse-alignment-video" controls autoplay muted loop playsinline width="100%">
               <source src="./static/assets/sparse-alignment.mp4" type="video/mp4">
@@ -468,7 +499,7 @@
           </div>
         </div>
         <div class="column is-half">
-          <h4 class="title is-4 has-text-centered">Dense Alignment</h4>
+          <h4 class="title is-4 has-text-centered">Deformation Alignment</h4>
           <div class="method-video">
             <video id="sparse-alignment-video" controls autoplay muted loop playsinline width="100%">
               <source src="./static/assets/dense-alignment.mp4" type="video/mp4">
@@ -717,6 +748,14 @@
         </div>
       </div>
       <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          COLMAP fails badly and is unable to recover all the cameras. Our labels can make COLMAP succeed, but our
+          Toon3D method performs the best at completing the scenes. Please see the paper for more details.
+        </h2>
+        <img src="static/assets/airbnb.jpg" style="height: auto;">
+      </div>
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">Here are our video results of Toon3D on two Airbnb rooms.</h2>
         <div class="container is-max-widescreen">
           <div id="blender-carousel" class="carousel1 results-carousel">
             <div class="item">
@@ -808,7 +847,7 @@
       <h2 class="title">BibTeX</h2>
       <p>Please consider citing our work if you find it useful.</p>
       <pre><code>@inproceedings{weber2023toon3d,
-  title = {Toon3D: Seeing Cartoons from a New Perspective},
+  title = {Toon3D: Seeing Cartoons from New Perspectives},
   author = {Ethan Weber* and Riley Peterlinz* and Rohan Mathur and
     Frederik Warburg and Alexei A. Efros and Angjoo Kanazawa},
   booktitle = {arXiv},
